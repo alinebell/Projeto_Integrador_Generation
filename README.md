@@ -20,7 +20,7 @@ Todos os dias, mais de 700 crianças com menos de 5 anos morrem de diarreia liga
 de acordo com dados da UNICEF de 22 de março de 2022.
 
 ###  O modelo do software é E-COMMERCE
-O software vai contar com 3 telas no total  um uma tela de login uma tela compra e uma tela de apresentação de produto,onde será feita um tipo de apadrinhagem onde os filtros de água<br> comprados serão enviados parapessoas que não tem acesso a esse tipo de produto,<br>roupas onde a produção é feita sem desperdício de água  e utensílios feitos de materiais biodegradáveis e a venda dessas roupas e utensílios diferente dos filtros serão enviados para as pessoas que compraram porém o dinheiro arrecadado será enviado para famílias de baixa renda que sofrem pela escassez de água.  
+O software vai contar com 3 telas no total um uma tela de login uma tela compra e uma tela de apresentação de produto,onde será feita um tipo de apadrinhagem onde os filtros de água comprados serão enviados parapessoas que não tem acesso a esse tipo de produto,<br>roupas onde a produção é feita sem desperdício de água  e utensílios feitos de materiais biodegradáveis e a venda dessas roupas e utensílios diferente dos filtros serão enviados para as pessoas que compraram porém o dinheiro arrecadado será enviado para famílias de baixa renda que sofrem pela escassez de água.  
 
 ### Tecnologias usadas 
 
