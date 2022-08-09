@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.generation.ProjetoIntegrador.model.ProdutoModel;
+import com.generation.ProjetoIntegrador.repository.CategoriaRepository;
 import com.generation.ProjetoIntegrador.repository.ProdutoRepository;
 
 @RestController
@@ -24,6 +25,8 @@ import com.generation.ProjetoIntegrador.repository.ProdutoRepository;
 @CrossOrigin ("*")
 public class ProdutoController {
 	
+	@Autowired
+	private CategoriaRepository categoriaRepository;
 	@Autowired
 	private ProdutoRepository produtoRepository;
 	
@@ -40,9 +43,9 @@ public class ProdutoController {
 	}
 
 	@GetMapping("/nome/{nome}")
-	public ResponseEntity<List<ProdutoModel>> GetByNome(@PathVariable String nome){
+	public ResponseEntity<List<ProdutoModel>> GetByNome(@PathVariable String nomeProduto){
 		return ResponseEntity.ok(produtoRepository
-				.findAllByNomeProdutoContainingIgnoreCase(nome));
+				.findAllByNomeProdutoContainingIgnoreCase(nomeProduto));
 		
 	}
 	
@@ -53,12 +56,13 @@ public class ProdutoController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<ProdutoModel> PostById(@PathVariable Long id){
-		return produtoRepository.findById(id)
-				.map(resposta -> ResponseEntity.ok (resposta))
-				.orElse(ResponseEntity.notFound() .build());
+	public ResponseEntity<ProdutoModel> PostById(@RequestBody ProdutoModel produto){
+		if (categoriaRepository.existsById(produto.getCategoria().getId()))
+			return ResponseEntity.status(HttpStatus.CREATED).body(produtoRepository.save(produto));
+			return ResponseEntity.notFound().build();
 		
 	}
+	
 	
 	@PutMapping
 	public ResponseEntity<ProdutoModel> putProduto(@RequestBody ProdutoModel produto){
