@@ -6,9 +6,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table (name = "tb_produtos")
@@ -24,7 +27,7 @@ public class ProdutoModel {
 	private String nomeProduto;
 	
 	@NotBlank
-	private BigDecimal preço;
+	private BigDecimal preco;
 	
 	@NotBlank
 	@Size(min=5, max=1000, message = "O atributo descrição deve ter no mínimo 5 e no máximo 1000 caracteres! ")
@@ -33,6 +36,20 @@ public class ProdutoModel {
 	@NotBlank
 	@Size(min=5, max=100, message = "O atributo modelo deve ter no mínimo 5 e no máximo 100 caracteres! ")
 	private String modelo;
+	
+	@ManyToOne
+	@JsonIgnoreProperties ("produto")
+	private CategoriaModel categoria;
+	
+	
+
+	public CategoriaModel getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(CategoriaModel categoria) {
+		this.categoria = categoria;
+	}
 
 	public Long getId() {
 		return id;
@@ -50,12 +67,12 @@ public class ProdutoModel {
 		this.nomeProduto = nomeProduto;
 	}
 
-	public BigDecimal getPreço() {
-		return preço;
+	public BigDecimal getPreco() {
+		return preco;
 	}
 
-	public void setPreço(BigDecimal preço) {
-		this.preço = preço;
+	public void setPreco(BigDecimal preco) {
+		this.preco = preco;
 	}
 
 	public String getDescricao() {
