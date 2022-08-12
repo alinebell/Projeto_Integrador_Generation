@@ -11,6 +11,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -23,10 +24,10 @@ public class UsuarioModel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Long id;
 	
-	@NotBlank(message = "O atributo nomeUsuario é obrigatório e não pode utilizar espaços em branco!")
+	@NotNull(message = "O atributo nomeUsuario é obrigatório e não pode utilizar espaços em branco!")
 	public String nomeUsuario;
 	
-	@NotBlank(message = "O atributo usuário é obrigatório e não pode utilizar espaços em branco!") 
+	@NotNull(message = "O atributo usuário é obrigatório e não pode utilizar espaços em branco!") 
 	@Email(message="O atributo e-mail é obrigatório")
 	public String usuario;
 	
@@ -34,6 +35,7 @@ public class UsuarioModel {
 	@Size(min = 8, message = "O atributo senha deve conter no mínimo 08 caracteres")
 	public String senha;
 	
+	@Size(max = 5000, message = "O link da foto não pode ser maior do que 5000 caracteres")
 	public String foto;
 	
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
