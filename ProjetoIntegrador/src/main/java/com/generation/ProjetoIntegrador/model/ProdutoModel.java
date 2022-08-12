@@ -42,6 +42,9 @@ public class ProdutoModel {
 	@JsonIgnoreProperties ("produto")
 	private CategoriaModel categoria;
 	
+	@ManyToOne
+	@JsonIgnoreProperties ("usuario")
+	private UsuarioModel usuario;
 	
 
 	public CategoriaModel getCategoria() {
@@ -90,6 +93,16 @@ public class ProdutoModel {
 
 	public void setModelo(String modelo) {
 		this.modelo = modelo;
+	}
+
+	public UsuarioModel getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(UsuarioModel usuario) {
+		this.usuario = usuario;
 	}	
+	
+	
 	
 }
