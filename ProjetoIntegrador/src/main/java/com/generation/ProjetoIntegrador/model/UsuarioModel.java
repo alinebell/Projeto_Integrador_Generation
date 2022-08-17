@@ -16,6 +16,8 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 @Entity
 @Table(name="tb_usuario")
 public class UsuarioModel {
@@ -27,6 +29,7 @@ public class UsuarioModel {
 	@NotNull(message = "O atributo nomeUsuario é obrigatório e não pode utilizar espaços em branco!")
 	public String nomeUsuario;
 	
+	@Schema(example = "email@email.com")
 	@NotNull(message = "O atributo usuário é obrigatório e não pode utilizar espaços em branco!") 
 	@Email(message="O atributo e-mail é obrigatório")
 	public String usuario;
