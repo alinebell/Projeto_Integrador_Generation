@@ -31,7 +31,7 @@ public class SwaggerConfig {
 					.email("g7.generation55@gmail.com")))
 				.externalDocs(new ExternalDocumentation()
 					.description("Github")
-					.url("https://github.com/alinebell/Projeto_Integrador_Generation/"));
+					.url("https://github.com/alinebell/Projeto_Integrador_Generation"));
 	}
 
 	@Bean
