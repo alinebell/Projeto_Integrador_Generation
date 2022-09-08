@@ -41,6 +41,8 @@ public class UsuarioModel {
 	@Size(max = 5000, message = "O link da foto não pode ser maior do que 5000 caracteres")
 	public String foto;
 	
+	private String tipo;
+	
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
 	private List <ProdutoModel> produto;
@@ -86,6 +88,13 @@ public class UsuarioModel {
 	public void setProduto(List<ProdutoModel> produto) {
 		this.produto = produto;
 	}
+	public String getTipo() {
+		return tipo;
+	}
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	
 	
 	
 	
