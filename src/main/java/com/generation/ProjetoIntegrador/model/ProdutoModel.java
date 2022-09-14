@@ -38,6 +38,8 @@ public class ProdutoModel {
 	@Size(min=5, max=100, message = "O atributo modelo deve ter no mínimo 5 e no máximo 100 caracteres! ")
 	private String modelo;
 	
+	private String foto;
+	
 	@ManyToOne
 	@JsonIgnoreProperties ("produto")
 	private CategoriaModel categoria;
@@ -101,6 +103,14 @@ public class ProdutoModel {
 
 	public void setUsuario(UsuarioModel usuario) {
 		this.usuario = usuario;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}	
 	
 	
