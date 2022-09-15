@@ -59,13 +59,12 @@ public class UsuarioService {
 
             if (compararSenhas(usuarioLogin.get().getSenha(), usuario.get().getSenha())) {
 
-                usuarioLogin.get().setId(usuario.get().getId());
-                usuarioLogin.get().setNomeUsuario(usuario.get().getNomeUsuario());
-                usuarioLogin.get().setFoto(usuario.get().getFoto());
-                usuarioLogin.get().setToken(gerarBasicToken(usuarioLogin.get().getUsuario(),  
-                usuarioLogin.get().getSenha()));
-                usuarioLogin.get().setSenha(usuario.get().getSenha());
-                usuarioLogin.get().setTipo(usuario.get().getTipo());
+            	usuarioLogin.get().setId(usuario.get().getId());
+    			usuarioLogin.get().setNomeUsuario(usuario.get().getNomeUsuario());
+    			usuarioLogin.get().setFoto(usuario.get().getFoto());
+    			usuarioLogin.get().setToken(gerarBasicToken(usuarioLogin.get().getUsuario(),usuarioLogin.get().getSenha()));
+    			usuarioLogin.get().setSenha(usuario.get().getSenha());
+    			usuarioLogin.get().setTipo(usuario.get().getTipo());
     			
 
                 return usuarioLogin;

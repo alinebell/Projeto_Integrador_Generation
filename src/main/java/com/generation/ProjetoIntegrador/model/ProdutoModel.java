@@ -38,6 +38,7 @@ public class ProdutoModel {
 	@Size(min=5, max=100, message = "O atributo modelo deve ter no mínimo 5 e no máximo 100 caracteres! ")
 	private String modelo;
 	
+	@Size(max = 5000, message = "O link da foto não pode ser maior do que 5000 caracteres")
 	private String foto;
 	
 	@ManyToOne

@@ -3,6 +3,8 @@ package com.generation.ProjetoIntegrador.controller;
 import java.math.BigDecimal;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +24,7 @@ import com.generation.ProjetoIntegrador.repository.ProdutoRepository;
 
 @RestController
 @RequestMapping ("/produtos")
-@CrossOrigin ("*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ProdutoController {
 	
 	@Autowired
@@ -64,12 +66,29 @@ public class ProdutoController {
 	}
 	
 	
-	@PutMapping
+	/*@PutMapping
 	public ResponseEntity<ProdutoModel> putProduto(@RequestBody ProdutoModel produto){
 		return 	ResponseEntity.status(HttpStatus.OK)
 				.body(produtoRepository.save(produto));
 		
+	}*/
+	@PutMapping
+	public ResponseEntity<ProdutoModel> putPostagem (@Valid @RequestBody ProdutoModel produto){
+
+
+		if (produtoRepository.existsById(produto.getId())){
+			
+			if (categoriaRepository.existsById(produto.getCategoria().getId()))
+				return ResponseEntity.status(HttpStatus.OK)
+						.body(produtoRepository.save(produto));
+			
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+			
+		}			
+			
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
+
 	
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable Long id){
