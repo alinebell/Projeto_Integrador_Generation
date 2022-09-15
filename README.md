@@ -28,6 +28,5 @@ O software vai contar com 3 telas no total um uma tela de login uma tela compra 
 <img align="center" alt="Naty-Java" height="100" width="100" <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" />
 <img align="center" alt="Naty-My" height="100" width="100"<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" />
 <img align="center" alt="Naty-My" height="100" width="100"<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" />
-<img align="center" alt="Naty-My" height="100" width="100"<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
-<img align="center" alt="Naty-My" height="100" width="100"<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+
    
